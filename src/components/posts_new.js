@@ -12,16 +12,22 @@ class PostsNew extends Component {
           type="text"
           {...field.input}
         />
+      {field.meta.era}
       </div>
     )
   }
 
+  onSubmit(values){
+    console.log(values);
+  }
+
   render(){
+    const { handleSubmit } = this.props;
     return(
       <div>
         <h3>New post</h3>
         <Link to="/">Back</Link>
-        <form className="form-group">
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="form-group">
           <Field
             name="title"
             component={this.renderField}
@@ -37,6 +43,7 @@ class PostsNew extends Component {
             component={this.renderField}
             label="Post Content"
           />
+        <button type="submit" className="btn btn-primary">Submit</button>
         </form>
       </div>
     );

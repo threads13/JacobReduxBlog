@@ -24,7 +24,7 @@ class PostsNew extends Component {
   }
 
   onSubmit(values){
-    console.log(values);
+    this.props.createPost(values);
   }
 
   render(){
@@ -78,5 +78,5 @@ export default reduxForm({
   validate,
   form: 'PostNewForm'
 })(
-  connect(null,{createPost})(PostsNew)
+  connect(null, {createPost})(PostsNew)
 );

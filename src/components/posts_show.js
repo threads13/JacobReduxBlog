@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPost } from '../actions';
+import { Link } from 'react-router-dom';
 
 class PostsShow extends Component {
   componentDidMount(){
-    const {id} = this.props.match.params.id;
+    const {id} = this.props.match.params;
     this.props.fetchPost(id);
   }
 
@@ -17,9 +18,14 @@ class PostsShow extends Component {
 
     return(
       <div>
-        <h2>{post.title}</h2>
-        <h5>Written by: {post.categories}</h5>
-        <p>{post.content}</p>
+        <div className="newPost">
+          <h2>{post.title}</h2>
+        <h6>Written by: <em>{post.categories}</em></h6>
+          <p className="content">{post.content}</p>
+        </div>
+        <Link to="/" className="btn btn-primary content">
+          Back
+        </Link>
       </div>
     );
   }

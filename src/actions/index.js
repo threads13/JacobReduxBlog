@@ -4,7 +4,7 @@ export const FETCH_POSTS = 'fetch_posts';
 export const CREATE_POST = 'create_post';
 export const FETCH_POST = 'fetch-post';
 
-https://reduxblog.herokuapp.com/api/posts?key=jacobblog
+
 const ROOT_URL = 'https://reduxblog.herokuapp.com/api';
 const API_KEY = '?key=jacobblog'
 

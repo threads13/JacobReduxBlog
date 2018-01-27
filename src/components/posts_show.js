@@ -38,7 +38,6 @@ class PostsShow extends Component {
         <Link
           to={`/posts/${post.id}/edit`}
           className="btn btn-danger content"
-          onClick={this.onEditClick.bind(this)}
           >
           Edit
         </Link>

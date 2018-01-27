@@ -4,7 +4,7 @@ class PostsUpdate extends Component {
   render(){
     return (
       <div>
-        Edit Component
+        <h2>{post.title}</h2>
       </div>
     );
   }

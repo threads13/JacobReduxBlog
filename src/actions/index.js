@@ -45,3 +45,7 @@ export function deletePost(id, callback){
     payload: id
   }
 }
+
+export function updatePost(value){
+  
+}

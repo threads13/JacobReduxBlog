@@ -30,6 +30,7 @@ class PostsIndex extends Component {
   render(){
     return(
       <div>
+        <h2 className="content">Jacob's React/Redux Blog</h2>
         <div className="text-xs-right newPost">
           <Link className="btn btn-primary" to="/posts/new">
             New Post

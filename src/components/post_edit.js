@@ -40,6 +40,7 @@ class PostEdit extends Component {
   }
 
   onSubmit(values){
+    console.log(values);
     this.props.editPost(values);
   }
 
@@ -49,9 +50,7 @@ class PostEdit extends Component {
 
     const {post} = this.props;
 
-    if(!post){
-      return <div>Loading...</div>;
-    }
+
 
     return(
       <div>
@@ -61,7 +60,7 @@ class PostEdit extends Component {
             name="title"
             component={this.renderField}
             label="Title"
-            placeholder={this.props.post.title}
+
           />
           <Field
             name="author"

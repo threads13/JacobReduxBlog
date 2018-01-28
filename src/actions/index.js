@@ -18,8 +18,9 @@ export function fetchPosts(){
   };
 }
 
-export function createPost(values){
-  const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, values);
+export function createPost(values, callback){
+  const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, values)
+  .then(() => callback());
 
   return {
     type: CREATE_POST,
@@ -46,8 +47,9 @@ export function deletePost(id, callback){
   }
 }
 
-export function editPost(value){
-  const request = axios.post(`${ROOT_URL}/posts/${id}${API_KEY}`)
+export function editPost(value, calback){
+  const request = axios.post(`${ROOT_URL}/posts/${id}${API_KEY}`, values)
+  .then(() => callback);
 
   return {
     type: EDIT_POST,

@@ -37,7 +37,7 @@ class PostsShow extends Component {
         </div>
         <Link
           to={`/posts/${post.id}/edit`}
-          className="btn btn-danger content"
+          className="btn btn-warning content"
           >
           Edit
         </Link>

@@ -4,7 +4,7 @@ export const FETCH_POSTS = 'fetch_posts';
 export const CREATE_POST = 'create_post';
 export const FETCH_POST = 'fetch-post';
 export const DELETE_POST = 'delete-post';
-export const UPDATE_POST = 'update-post';
+export const EDIT_POST = 'edit-post';
 
 const ROOT_URL = 'https://reduxblog.herokuapp.com/api';
 const API_KEY = '?key=jacobblog'
@@ -46,6 +46,11 @@ export function deletePost(id, callback){
   }
 }
 
-export function updatePost(value){
-  
+export function editPost(value){
+  const request = axios.post(`${ROOT_URL}/posts/${id}${API_KEY}`)
+
+  return {
+    type: EDIT_POST,
+    payload: request
+  };
 }

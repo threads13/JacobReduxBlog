@@ -16,9 +16,9 @@ class PostsNew extends Component {
           type="text"
           {...field.input}
         />
-      <div className="text-help">
-        {field.meta.touched ? field.meta.error: ''}
-      </div>
+        <div className="text-help">
+          {field.meta.touched ? field.meta.error: ''}
+        </div>
       </div>
     )
   }
@@ -32,7 +32,7 @@ class PostsNew extends Component {
   render(){
     const { handleSubmit } = this.props;
     return(
-      <div>
+      <div className="content">
         <h3>New post</h3>
         <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="form-group">
           <Field

@@ -44,6 +44,11 @@ class PostsShow extends Component {
 
     return(
       <div>
+        <div className="text-xs-right newPost">
+          <Link to="/" className="content">
+            Back
+          </Link>
+        </div>
         <div className="newPost">
           <h2>{post.title}</h2>
         <h6>Written by: <em>{post.categories}</em></h6>
@@ -56,11 +61,7 @@ class PostsShow extends Component {
           >
           Delete
         </button>
-        <p>
-          <Link to="/" className="content">
-            Back
-          </Link>
-        </p>
+
       </div>
     );
   }

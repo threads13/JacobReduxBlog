@@ -24,6 +24,7 @@ class PostsNew extends Component {
   }
 
   onSubmit(values) {
+    console.log(values);
     this.props.createPost(values, () => {
       this.props.history.push("/");
     });
@@ -40,7 +41,7 @@ class PostsNew extends Component {
             label="Title"
           />
           <Field
-            name="author"
+            name="categories"
             component={this.renderField}
             label="Author"
           />
@@ -64,8 +65,8 @@ function validate(values){
     errors.title = "Enter a username";
   }
 
-  if (!values.author){
-    errors.author = "Enter an author";
+  if (!values.categories){
+    errors.categories = "Enter a category ";
   }
 
   if (!values.content){

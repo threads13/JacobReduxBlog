@@ -17,9 +17,23 @@ class PostsShow extends Component {
      });
    }
 
-  onEditClick(){
+   onEditClick(values){
+     // i can now get the id sent to my edit onClick
+     // need to figure out how to get it sent through
+     const post = this.props.post;
+     // console.log(post);
 
-  }
+
+     // const { id } = this.props.match.params;
+
+     this.props.editPost(values, () => {
+       this.props.history.push("/")
+     });
+   }
+
+   // this.props.createPost(values, () => {
+   //   this.props.history.push("/");
+   // });
 
   render(){
     const {post} = this.props;
@@ -35,12 +49,6 @@ class PostsShow extends Component {
         <h6>Written by: <em>{post.categories}</em></h6>
           <p className="content">{post.content}</p>
         </div>
-        <Link
-          to={`/posts/${post.id}/edit`}
-          className="btn btn-warning content"
-          >
-          Edit
-        </Link>
         <button
           to="/"
           className="btn btn-danger content"

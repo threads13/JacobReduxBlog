@@ -7,7 +7,7 @@ export const DELETE_POST = 'delete-post';
 export const EDIT_POST = 'edit-post';
 
 const ROOT_URL = 'https://reduxblog.herokuapp.com/api';
-const API_KEY = '?key=jacobblog'
+const API_KEY = '?key=jacobblog2'
 
 export function fetchPosts(){
   const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
@@ -19,7 +19,8 @@ export function fetchPosts(){
 }
 
 export function createPost(values, callback){
-  const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, values)
+  const request = axios
+  .post(`${ROOT_URL}/posts${API_KEY}`, values)
   .then(() => callback());
 
   return {
@@ -47,12 +48,14 @@ export function deletePost(id, callback){
   }
 }
 
-export function editPost(value, calback){
-  const request = axios.post(`${ROOT_URL}/posts/${id}${API_KEY}`, values)
-  .then(() => callback);
+// maybe i need a get to the edit form page, then a post request afterwards
 
-  return {
-    type: EDIT_POST,
-    payload: request
-  };
-}
+// export function editPost(values, calback){
+//   const request = axios.post(`${ROOT_URL}/posts/${id}${API_KEY}`, values)
+//   .then(() => callback);
+//
+//   return {
+//     type: EDIT_POST,
+//     payload: request
+//   };
+// }
